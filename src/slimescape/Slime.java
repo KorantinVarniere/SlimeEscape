@@ -34,8 +34,7 @@ public class Slime {
 		this.hp = hp;
 	}
 
-	
-	private boolean isalive() {
+	public boolean isalive() {
 		return hp >0;
 	}
 }
