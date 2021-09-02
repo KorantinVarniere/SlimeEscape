@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Deplacement{
 
     int[] playerPosition;
-    Map map=new Map(0); //0 par défaut, à changer en fonction du niveau
+    Map map=new Map(1); //0 par défaut, à changer en fonction du niveau
     
     public void move(){
     	
@@ -25,7 +25,7 @@ public class Deplacement{
             else System.out.println("Invalid movement");
         }
         
-
+        scanner.close();
     }
     
     public boolean validMovement(char movement,char direction){
