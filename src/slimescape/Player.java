@@ -34,18 +34,18 @@ public class Player {
 		addSlime(nouveauSlime);
 	}
 
-	/*
-		public void heal(Slime slime, Objet potion){
-			//Slime getLige et add ce que donne la potion;
-		}*/
-
-	public void damage(Slime slime,int degats){
-		//slime getLife et -degats
+	
+	public void heal(Slime slime, Objet potion){
+		slime.setHp(slime.getHp()+potion.getHeal());
 	}
 
-	/*public int[] getPosition(){
-		//getPosition avec la classe lecteur fichier
-	}*/
+	public void damage(Slime slime,int degats){
+		slime.setHp(slime.getHp()-degats);
+	}
+
+	public int[] getPosition(){
+		
+	}
 }
 
 

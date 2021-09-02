@@ -17,7 +17,7 @@ public class Map {
 		this.map = generateMap(level);
 	}
 	
-	private char[][] generateMap(int level) {
+	public char[][] generateMap(int level) {
 		String[] tmp = new String[16];
 		char[][] map = new char[16][50];
 		
@@ -73,6 +73,11 @@ public class Map {
 		return null;
 	}
 	
+	public void setPlayerPosition(int x,int y) {
+		int[] position=getPlayerPosition();
+		map[position[0]][position[1]]=' ';
+		map[x][y]='j';
+	}
 	public char getSymbol(int x, int y) {
 		return this.map[y][x];
 	}
