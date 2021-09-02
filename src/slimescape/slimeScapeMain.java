@@ -4,10 +4,8 @@ public class slimeScapeMain {
 	
 	public static void main(String[] args) {
 		
-		Map map=new Map(1);
-		map.generateMap(1);
-		Deplacement deplacement=new Deplacement();
-		deplacement.move();
-		
+		System.err.println("  ,```^````, \r\n" + " / ○    x  .\\\r\n" + "'    ^    ...'\r\n" + "`-,______..,-'          ");
+		System.out.println("\n");
+		System.out.println("  ,````^```, \r\n" + " /.  ○    ○ \\\r\n" + "'...    ˇ    '\r\n" + "'-,..______,-`");
 	}
 }
