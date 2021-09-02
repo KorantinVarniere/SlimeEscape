@@ -4,6 +4,7 @@ import java.util.Random;
 
 
 public class Slime {
+	private String name;
 	private int hp;
 	private int hpMax;
 	private int level;
@@ -25,6 +26,7 @@ public class Slime {
 		this.xp = 0;
 		this.nAttacks = giveNormalAttack(); 
 		this.mAttacks = giveMagicalAttack();
+		this.name = this.types + "-Slime";
 	}
 	
 	public Slime(int lvl) {
@@ -193,14 +195,14 @@ public class Slime {
 	public void setLevel(int level) {
 		this.level = level;
 	}
-
+	
 	@Override
 	public String toString() {
-		return "Slime [hp=" + hp + ", hpMax=" + hpMax + ", level=" + level + ", xp=" + xp + ", xpMax=" + xpMax
-				+ ", isDefended=" + isDefended + ", nAttacks=" + nAttacks + ", mAttacks=" + mAttacks + ", types="
-				+ types + "]";
+		return "Slime [name=" + name + ", hp=" + hp + ", hpMax=" + hpMax + ", level=" + level + ", xp=" + xp
+				+ ", xpMax=" + xpMax + ", isDefended=" + isDefended + ", nAttacks=" + nAttacks + ", mAttacks="
+				+ mAttacks + ", types=" + types + "]";
 	}
-	
+
 	public String toStringHP() {
 		return "Slime [Health Points=" + hp + "/" + hpMax + "]" ;
 	}
@@ -211,6 +213,10 @@ public class Slime {
 	
 	public String toStringType() {
 		return "Slime [ Type =" + types + "]" ;
+	}
+	
+	public String toStringName() {
+		return ""+this.name ;
 	}
 	
 	public String toStringNormalAttack() {
@@ -258,6 +264,7 @@ public class Slime {
 		System.out.println("Le Slime 2 prend une potion de heal");
 		ph.UseItem(s4);
 		System.out.println(s3.toStringHP());
+		System.out.println(s3.toStringName());
 	}
 }
 
