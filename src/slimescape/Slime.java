@@ -163,11 +163,18 @@ public class Slime {
 		return this.mAttacks.name;
 	}
 	
-	
 	public String getNormalAttackName () {
 		return this.nAttacks.msg;
 	}
 	
+	public int getLevel() {
+		return level;
+	}
+
+	public void setLevel(int level) {
+		this.level = level;
+	}
+
 	@Override
 	public String toString() {
 		return "Slime [hp=" + hp + ", hpMax=" + hpMax + ", level=" + level + ", xp=" + xp + ", xpMax=" + xpMax
@@ -198,10 +205,21 @@ public class Slime {
 	public static void main(String[] args) {
 		Slime s3 = new Slime();
 		System.out.println(s3.toStringHP());
-		s3.setHp(80);
+		System.out.println("Le Slime 1 prend 50 de dégats !");
+		s3.setHp(50);
 		System.out.println(s3.toStringHP());
 		HealPotion ph = new HealPotion();
+		System.out.println("Le Slime 1 prend une potion de heal");
 		ph.UseItem(s3);
+		System.out.println(s3.toStringHP());
+		System.out.println(" ");
+		Slime s4 = new Slime();
+		System.out.println(s4.toStringHP());
+		System.out.println("Le Slime 2 prend 20 de dégats !");
+		s4.setHp(s4.getHp()-20);
+		System.out.println(s3.toStringHP());
+		System.out.println("Le Slime 2 prend une potion de heal");
+		ph.UseItem(s4);
 		System.out.println(s3.toStringHP());
 	}
 }
