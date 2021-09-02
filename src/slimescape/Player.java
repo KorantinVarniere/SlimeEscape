@@ -82,6 +82,14 @@ public class Player {
 		return item==1 ? new HealPotion() : new XpPotion();
 	}
 
+	public void SwapSlime (List<Slime> playerSlimes, int i1 , int i2) {
+		Slime tmp1 = playerSlimes.get(i1-1);
+		Slime tmp2 = playerSlimes.get(i2-1);
+		playerSlimes.remove(i1-1);
+		playerSlimes.remove(i2-1);
+		playerSlimes.add(i1-1,tmp2);
+		playerSlimes.add(i2-1,tmp1);
+	}
 }
 
 
