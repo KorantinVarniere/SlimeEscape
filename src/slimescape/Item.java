@@ -1,5 +1,5 @@
 package slimescape;
 
-public class Item {
-
+public interface Item {
+	public void UseItem(Slime s);
 }

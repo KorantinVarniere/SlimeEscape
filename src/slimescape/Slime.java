@@ -98,7 +98,7 @@ public class Slime {
 		return MagicalAttacks.A;
 	}
 	
-	private void evolve () {
+	public void evolve () {
 		if (xpMax == xp) {
 			if (level != 10) {
 				level = level +1;
