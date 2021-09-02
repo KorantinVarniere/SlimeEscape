@@ -9,7 +9,7 @@ public class HealPotion implements Item {
 			if (s.getHp() > s.getHpMax()) {
 				s.setHp(s.getHpMax());
 			}else {
-				s.setHp(healpercents);
+				s.setHp(s.getHp() + healpercents);
 			}
 		}
 		
