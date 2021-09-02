@@ -188,7 +188,7 @@ public class Combat {
 					sentence = "Le monstre vous inflige des degats magiques";
 				}else if (nb == 2){
 					sentence = "Le slime ennemie est pret a se defendre";
-					m1.DenfendingOn();
+					m2.DenfendingOn();
 				}
 
 
