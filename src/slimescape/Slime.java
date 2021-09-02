@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Slime {
 	private int hp;
 	private int hpMax;
-	static ArrayList Monster;
+	static ArrayList Slimes;
 	Attacks[] tab = new Attacks[3];
 	private Types types ;
 	
@@ -13,7 +13,7 @@ public class Slime {
 	public Slime(int hp,  Attacks[] tab, Types types) {
 		super();
 		this.hp = hp;
-		hpMax = 100;
+		hpMax = hp;
 		this.tab = tab;
 		this.types = types;
 	}
