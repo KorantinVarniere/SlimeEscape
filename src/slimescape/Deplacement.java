@@ -5,11 +5,12 @@ import java.util.Scanner;
 
 public class Deplacement{
 
-    int[] playerPosition=new int[] {0,0}; //Lecteur fichier get position Joueur;
+    int[] playerPosition;
     Map map=new Map(0); //0 par défaut, à changer en fonction du niveau
     
     public void move(){
-
+    	
+    	playerPosition=map.getPlayerPosition();
         Scanner scanner=new Scanner(System.in);
         System.out.println("Movement :");
         char direction=' ';
@@ -38,28 +39,28 @@ public class Deplacement{
         	if(map.getSymbol(x,y-1)!='_' || map.getSymbol(x,y-1)!='|') {
         		return false;
         	}
-            playerPosition[1]+=1;
+            map.setPlayerPosition(x, y-1);
             break;
 
         case 's':
         	if(map.getSymbol(x,y+1)=='_' || map.getSymbol(x,y+1)=='|') {
         		return false;
         	}
-            playerPosition[1]-=1;
+            map.setPlayerPosition(x, y+1);
             break;
 
         case 'q':
         	if(map.getSymbol(x-1,y)=='_' || map.getSymbol(x-1,y-1)=='|') {
         		return false;
         	}
-            playerPosition[0]-=1;
+            map.setPlayerPosition(x-1, y);
             break;
 
         case 'd':
         	if(map.getSymbol(x+1,y)=='_' || map.getSymbol(x+1,y)=='|') {
         		return false;
         	}
-            playerPosition[0]+=1;
+            map.setPlayerPosition(x+1, y);
             break;
         }
      
