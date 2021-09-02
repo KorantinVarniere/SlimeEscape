@@ -5,7 +5,7 @@ public enum MagicalAttacks {
  
 	private Types aType;
 	int damage;
-	private String name;
+	String name;
 	
 	private MagicalAttacks(Types aType, int damage, String name) {
 		this.aType = aType;

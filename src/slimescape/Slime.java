@@ -103,7 +103,7 @@ public class Slime {
 		return MagicalAttacks.A;
 	}
 	
-	private void evolve () {
+	public void evolve () {
 		if (xpMax == xp) {
 			if (level != 10) {
 				level = level +1;
@@ -151,12 +151,20 @@ public class Slime {
 		this.xp = xp;
 	}
 	
-	public int getDamageNa () {
+	public int getDamageNormalAttack () {
 		return this.nAttacks.damage;
 	}
 
-	public int getDamageMa () {
+	public int getDamageMagicalAttack () {
 		return this.mAttacks.damage;
+	}
+	
+	public String getMagicalAttackName () {
+		return this.mAttacks.name;
+	}
+	
+	public String getNormalAttackName () {
+		return this.nAttacks.msg;
 	}
 	
 	@Override
