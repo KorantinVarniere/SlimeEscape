@@ -167,6 +167,11 @@ public class Slime {
 		return this.nAttacks.msg;
 	}
 	
+	public Types getMagicalAttackType () {
+		return this.mAttacks.aType;
+	}
+	
+	
 	public int getLevel() {
 		return level;
 	}
@@ -184,6 +189,10 @@ public class Slime {
 	
 	public String toStringHP() {
 		return "Slime [Health Points=" + hp + "/" + hpMax + "]" ;
+	}
+	
+	public String toStringLvl() {
+		return "Slime [ Level =" + level + "]" ;
 	}
 
 	public static void _main(String[] args) {
