@@ -163,6 +163,7 @@ public class Slime {
 		return this.mAttacks.name;
 	}
 	
+	
 	public String getNormalAttackName () {
 		return this.nAttacks.msg;
 	}
