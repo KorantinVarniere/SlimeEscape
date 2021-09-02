@@ -1,6 +1,5 @@
 package slimescape;
 
-import java.util.ArrayList;
 import java.util.Random;
 
 
@@ -8,7 +7,6 @@ public class Slime {
 	private int hp;
 	private int hpMax;
 	private int level;
-	static ArrayList Slimes;
 	private int xp;
 	private int xpMax;
 	private boolean isDefended;
@@ -60,6 +58,15 @@ public class Slime {
 		}else
 		return NormalAttacks.THROW;
 	}
+	
+	public void DenfendingOn (){
+		this.isDefended = true;
+	}
+	
+	public void DenfendingOff () {
+		this.isDefended = false;
+	}
+	
 	
 	private MagicalAttacks giveMagicalAttack () {
 		Random rand = new Random();
