@@ -173,13 +173,35 @@ public class Slime {
 				+ ", isDefended=" + isDefended + ", nAttacks=" + nAttacks + ", mAttacks=" + mAttacks + ", types="
 				+ types + "]";
 	}
+	
+	public String toStringHP() {
+		return "Slime [Health Points=" + hp + "/" + hpMax + "]" ;
+	}
 
-	public static void main(String[] args) {
+	public static void _main(String[] args) {
 		Slime s1 = new Slime();
 		System.out.println(s1.toString());
 		s1.setXp(1);
 		s1.evolve();
 		System.out.println(s1.toString());
+	}
+	
+	public static void __main(String[] args) {
+		Slime s2 = new Slime();
+		System.out.println(s2.toString());
+		XpPotion px = new XpPotion();
+		px.UseItem(s2);
+		System.out.println(s2.toString());
+	}
+	
+	public static void main(String[] args) {
+		Slime s3 = new Slime();
+		System.out.println(s3.toStringHP());
+		s3.setHp(80);
+		System.out.println(s3.toStringHP());
+		HealPotion ph = new HealPotion();
+		ph.UseItem(s3);
+		System.out.println(s3.toStringHP());
 	}
 }
 
