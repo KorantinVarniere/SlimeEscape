@@ -10,5 +10,6 @@ public class Attacks {
 		this.damage = damage;
 	}
 
+	//NormalAttack   MagicAttack   Defense
 	
 }
