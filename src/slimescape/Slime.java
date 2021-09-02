@@ -205,10 +205,11 @@ public class Slime {
 	
 	public static void __main(String[] args) {
 		Slime s2 = new Slime();
-		System.out.println(s2.toString());
+		System.out.println(s2.toStringLvl());
 		XpPotion px = new XpPotion();
+		System.out.println("Le Slime 1 prend une potion d'experience");
 		px.UseItem(s2);
-		System.out.println(s2.toString());
+		System.out.println(s2.toStringLvl());
 	}
 	
 	public static void main(String[] args) {
