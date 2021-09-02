@@ -3,7 +3,7 @@ package slimescape;
 public enum Types {
 	WATER, FIRE, AIR, EARTH;
 	
-	static int compareTypes (Types type1 , Types type2) {
+	static Efficiency compareTypes (Types type1 , Types type2) {
 		if ((type1 == WATER && type2 == FIRE)|| (type2 == WATER && type1 == FIRE)) {
 			//water tres efficace 
 			//fire pas efficace
@@ -31,6 +31,6 @@ public enum Types {
 		if (type1 == type2) {
 			//rien ne change 
 		}
-		return 0;
+		return Efficiency.VEFFICIENT ;
 	}
 }
