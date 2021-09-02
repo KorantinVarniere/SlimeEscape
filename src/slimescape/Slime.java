@@ -28,7 +28,12 @@ public class Slime {
 		this.nAttacks = giveNormalAttack(); 
 		this.mAttacks = giveMagicalAttack();
 	}
-
+	
+	public Slime(int lvl) {
+		this();
+		this.level = lvl;
+	}
+	
 	private Types giveType() {
 		Random rand1 = new Random();
 		int i = rand1.nextInt(4);
@@ -102,7 +107,7 @@ public class Slime {
 		if (xpMax == xp) {
 			if (level != 10) {
 				level = level +1;
-				hpMax = hp+10;
+				hpMax = hp+100;
 				hp = hpMax;
 				xp = 0;
 				xpMax = level;
@@ -145,7 +150,15 @@ public class Slime {
 	public void setXp(int xp) {
 		this.xp = xp;
 	}
+	
+	public int getDamageNa () {
+		return this.nAttacks.damage;
+	}
 
+	public int getDamageMa () {
+		return this.mAttacks.damage;
+	}
+	
 	@Override
 	public String toString() {
 		return "Slime [hp=" + hp + ", hpMax=" + hpMax + ", level=" + level + ", xp=" + xp + ", xpMax=" + xpMax
