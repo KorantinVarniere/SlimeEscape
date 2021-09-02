@@ -3,11 +3,20 @@ package slimescape;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
-// Un enum complexe -> Etat qui serait lié a un complexe pour afficher le message quelle capacité/ Choisissez une action / choisissez un objet
+
+// Un enum complexe -> Etat qui serait liï¿½ a un complexe pour afficher le message quelle capacitï¿½/ Choisissez une action / choisissez un objet
 
 public class Combat {
 
-	static public String display(Slime m1, Slime m2, String[] txt) {
+	public Etat etat;
+
+	public Combat() {
+		super();
+		etat = Etat.MENUCHOIX;
+	}
+
+
+	public String display(Slime m1, Slime m2, String[] txt) {
 		String res = "";
 
 		res =  "                " + m2.getHp() + "/" + m2.getHpMax()  + "\n" + 
@@ -21,8 +30,8 @@ public class Combat {
 				",~~`( )_( )-\\|\n" + 
 				"    |/|  `--.\n" + 
 				"    ! !  !\n";
-		
-		//Message de l'enum
+
+		res += etat.getMsg() + "\n\n";
 		for (int i = 0; i < txt.length; i++) {
 			res += (i+1) + "-" + txt[i] + "\n"; 
 		}
@@ -43,25 +52,49 @@ public class Combat {
 	}
 
 
-	public static void phaseDeCombat(Slime m1, Slime m2) {
+	public void phaseDeCombat(Slime m1, Slime m2) {
 		String[] choixInteraction = {"Attaquer" , "Objet" ,"Changer de Slime "};
-		String[] attacks = {"Eclair", "force", "badaboum", "Boum Boum", "Retour"};
-		String[] objects = new String[4];
-
+		String[] attacks = {"Eclair", "force", "badaboum", "Retour"};
+		String[] objects = {"Potion Eclair", "Potion de force", "Potion badaboum", "Potion Boum Boum", "Retour"};
+		String[] slime = {"Slime de feu", "Retour"};
+		String[] msg = new String[2];
+		
 		System.out.println(display(m1, m2, choixInteraction));
 
 		while(m1.isalive() && m2.isalive()) {
+
 			Scanner scanner=new Scanner(System.in);
 			char keyboard=' ';
-			boolean valid=false;
 
 			try{
 				keyboard=scanner.nextLine().charAt(0);
 			}catch(NoSuchElementException e){}
 
-			if(keyboard=='1') {
-				System.out.println("-------------------------\nQuelle capacitée utiliser?\n-------------------------");	
-				System.out.println(display(m1, m2, attacks));
+
+			if (this.etat == Etat.MENUCHOIX) {
+				if(keyboard=='1') {
+					msg = attacks;
+
+					etat = Etat.COMBAT;
+				}else if(keyboard=='2') {
+					msg = objects;
+					etat = Etat.OBJECT;
+				}else if(keyboard=='3') {
+					msg = slime;
+					if (slime.length > 1) {
+						etat = etat.CHANGESLIME;						
+					}else {
+						System.out.println("Vous n'avez qu'un seul smile!");
+					}
+				}
+				
+				System.out.println(display(m1, m2, msg));
+				
+			}else if(keyboard == (msg.length + '0') ) {
+				
+				etat = Etat.MENUCHOIX;
+				msg = choixInteraction;
+				System.out.println(display(m1, m2, msg));
 			}
 
 		}	
@@ -81,7 +114,8 @@ public class Combat {
 		Slime m1 = new Slime( 90, null, null);
 		Slime m2 = new Slime( 50, null, null);
 
-		phaseDeCombat(m1, m2);
+		Combat combat = new Combat();
+		combat.phaseDeCombat(m1, m2);
 
 	}
 }
