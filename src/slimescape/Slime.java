@@ -208,6 +208,19 @@ public class Slime {
 	public String toStringLvl() {
 		return "Slime [ Level =" + level + "]" ;
 	}
+	
+	public String toStringType() {
+		return "Slime [ Type =" + types + "]" ;
+	}
+	
+	public String toStringNormalAttack() {
+		return "Slime [ Attack =" + getNormalAttackName() +" Damage :"+ getDamageNormalAttack() +"]" ;
+	}
+	
+	public String toStringMagicalAttack() {
+		return "Slime [ Attack =" + getMagicalAttackName() +" Damage :"+ getDamageMagicalAttack() + "Type : " + getMagicalAttackType() + "]" ;
+	}
+	
 
 	public static void _main(String[] args) {
 		Slime s1 = new Slime();
