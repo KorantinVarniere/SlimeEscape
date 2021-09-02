@@ -6,7 +6,7 @@ public class HealPotion implements Item {
 		// TODO Auto-generated method stub
 		if(s.getHp()!=s.getHpMax()) {
 			int healpercents =  (int) (s.getHpMax()*0.25);
-			if (s.getHp() > s.getHpMax()) {
+			if (s.getHp()+healpercents > s.getHpMax()) {
 				s.setHp(s.getHpMax());
 			}else {
 				s.setHp(s.getHp() + healpercents); 
