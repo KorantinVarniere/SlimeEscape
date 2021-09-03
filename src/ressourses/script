@@ -1,43 +1,41 @@
-************[a afficher peu a peu dÃ¨s qu'on a appuyer sur play ]*****************
 Bonjour et Bienvenue sur Slime Escape !
 
-Nouveaux messages du roi des Slime:
+Nouveaux messages du roi des Slimes:
 
 "Cher Aventurier, 
-une force malefique a pris possession de mon chateau plusieurs de mes serviteurs sont corrompu par cette force et je ne cesse de penser a la fin.
-Venez brave aventurier afin de secourir le chateau et combattre cette force malefique.Pour vous aider dans votre quÃªte je vous donne un de mes derniers serviteurs qui se trouve dans cette lettre:
-(Vous obtenez un slime[on lui give le nom])
-Je vous remets un equipement pour vous faciliter cette tache perilleuse.
+une force malefique a pris possession de mon chateau et plusieurs de mes serviteurs sont corrompus par cette force, je ne cesse de penser que c'est bientot la fin pour moi.
+Venez brave aventurier! secourir le chateau et combattre cette force malefique. Cependant, je ne vous laisserai pas y aller sans rien pour vous défendre, je vous laisse à disposition un de mes serviteurs.
+
+Et prenez ceci avec vous.
 (Vous obtenez 3 potions de soin et 3 potions d'experience).
 Je vous donne les details de votre quete : 
-	- Mon chateau a 5 etages et mes serviteurs les plus forts ont etais corrompu au niveau des escaliers (#) peut-etre qu'ils vous aideront dans votre quete.	
-	- Nous peuple des slimes ont 4 familles elementaires differentes.Â Nous possedons des faiblesses et l'une d'entre elles est notre element:		
-		- Parlons faiblesse la Famille FIRE a une faiblesse avec la Famille WATER
-		- La Famille WATER a une faiblesse avec la Famille WIND
-		- La Famille EARTH a une faiblesse pour la Famille FIRE
-		- Enfin, La Famille WIND a une faiblesse pour la Famille EARTH
-	-Pour ouvrir ton sac pour voir tes objets entre la lettre O.
-	-Pour voir les caracteristiques de ton slime ou bien pour changer de Slime courant tu entreras la lettre P.
-	-Sur ta carte tu verras (o) des ennemies et (le carre) des coffres qui contiennent des objets aleatoires et des (#) qui donnent l'emplacement du prochain Ã©tage.
-	- Tu as la possibilite de ne pas combattre les ennemies mais fait attention car tout monstre vaincu rapporte de l'experience ce qui fera Ã©voluer ton slime par la suite
+	- Mon chateau a 5 etages, à chaque étage se trouvent mes meilleurs (anciens) éléments, fais attention à eux car ils sont plus puissants que les autres, cependant si tu parviens à les battre, tu auras surement une chance d'en faire tes alliés. 
+	- Nous, peuple des slimes avons 4 familles elementaires. Chaque element possede sa faiblesse:		
+		- L'element WATER est fort contre l'element FIRE
+		- L'element WATER est faible contre l'element AIR
+		- L'element EARTH est faible contre l'element FIRE
+		- Enfin,L'element AIR est faible contre l'element EARTH
+	-Tu peux acceder à ton equipement avec la lettre O.
+	-Pour voir les caracteristiques de ton slime ou bien pour changer de Slime, utilise la lettre P.
+	-Sur ta carte tu verras (o) des ennemies et (le carre) qui sont des coffres contenant des objets aleatoires et des (#) qui donnent l'emplacement des escaliers menant à l'étage suivant.
+	- Tu as la possibilite de ne pas combattre les ennemies mais fait attention car tout monstre vaincu rapporte de l'experience ce qui fera evoluer ton slime par la suite
 	
-Je pense que j'ai faits le tour. Vite ! Jeune aventurier le destin est entre tes mains 
+Je pense que j'ai fait le tour. Vite Jeune aventurier! le destin de mon chateauest entre tes mains 
 Bonne chance 
 							Roi Slime" 
 
 ***********[Bonne fin]**************************
 
-Merci Aventurier, grace Ã  toi le royaume des slimes est sauve.
-Tu as reussi Ã  repousser les forces du mal.
-Je t'en felicite!
-Bravo!
+Merci Aventurier, grace Ã  toi le royaume des slimes est sauf.
+Tu as reussi a repousser les forces du mal.
+Merci enormement!
 
 ************[Mauvaise fin]**********************
 Cher Aventurier, il se fait tard et un de mes gardes corrompus a fait part de votre malheureuse mort
-Je sens mon ame quitter mon corps et les tenebres m'impregner.
+Je sens mon ame quitter mon corps et les tenebres s'emparer de mon chateau.
 Au revoir.
 GAME OVER
 
 
 
-(idÃ©e: pour faire les extends on peut faire un super slime (ce sera le boss de palier) 
+(idee: pour faire les extends on peut faire un super slime (ce sera le boss de palier) 
