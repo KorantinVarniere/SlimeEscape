@@ -1,66 +1,3 @@
-package slimescape;
-
-import java.util.ArrayList;
-import java.util.NoSuchElementException;
-import java.util.Random;
-import java.util.Scanner;
-
-
-// Un enum complexe -> Etat qui serait liï¿½ a un complexe pour afficher le message quelle capacitï¿½/ Choisissez une action / choisissez un objet
-
-public class Combat {
-
-	Player p;
-	public Etat etat;
-	boolean botTurn = false;
-
-	public Combat(Player p) {
-		super();
-		this.p = p;
-		etat = Etat.MENUCHOIX;
-	}
-
-
-	public String display(Slime m1, Slime m2, String[] txt, String sentence) {
-		String res = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n";
-
-		res +=  "                " + m2.getHp() + "/" + m2.getHpMax()  + " Slime de " + m2.getTypes().name() +  "\n" + 
-				
-				  "                  ,```^````, \r\n"
-				+ "                 / ○    x  .\\\r\n"
-				+ "                '    ^    ...'\r\n"
-				+ "                `-,______..,-'"+                                      
-				
-				"\n\n\n\n" + 
-				m1.getHp() + "/" + m1.getHpMax() +  " Slime de " + m1.getTypes().name() +" \n" + 
-				"  ,````^```,  \r\n"
-				+ " /.  ○    ○ \\ \r\n"
-				+ "'...    ˇ    '\r\n"
-				+ "'-,..______,-`\n\n";
-
-		res += sentence + "\n\n\n";
-
-		res += etat.getMsg() + "\n\n";
-		for (int i = 0; i < txt.length; i++) {
-			res += (i+1) + "-" + txt[i] + "\n"; 
-		}
-
-		/*
-				" _____________________    _____________________\n" + 
-				"|                     |  |                     |\n" + 
-				"|                     |  |                     |\n" + 
-				"|_____________________|  |_____________________|\n" + 
-				" _____________________    _____________________\n" + 
-				"|                     |  |                     |\n" + 
-				"| coup de poing       |  |                     |\n" + 
-				"|_____________________|  |_____________________|\n" + 
-				"\n" + 
-				"\n" + */
-
-		return res;
-	}
-
-
 	public void phaseDeCombat(Slime m1, Slime m2) {
 		String[] choixInteraction = {"Attaquer" ,"Changer de Slime "};
 		String[] attacks = {m1.getNormalAttackName(), m1.getMagicalAttackName(), "Se defendre","Retour"};
@@ -86,11 +23,11 @@ public class Combat {
 
 		String[] msg = choixInteraction;
 
-		System.out.println(display(m1, m2, msg, sentence));
+		System.out.println(display(currentSlime, m2, msg, sentence));
 
 
-		while(m1.isalive() && m2.isalive()) {
-				System.out.println(display(m1, m2, msg, sentence));
+		while(currentSlime.isalive() && m2.isalive()) {
+				System.out.println(display(currentSlime, m2, msg, sentence));
 
 			sentence = "\n\n";
 			Scanner scanner=new Scanner(System.in);
@@ -120,7 +57,7 @@ public class Combat {
 			}else if(this.etat == Etat.COMBAT) {
 
 				if (keyboard == '1') {
-					int degat = m1.getDamageNormalAttack() ;
+					int degat = currentSlime.getDamageNormalAttack() ;
 
 					if (m2.isDefended()) {
 
@@ -130,28 +67,28 @@ public class Combat {
 						p.damage(m2, degat);
 					}
 
-					sentence = "Le slime de " + m1.getTypes().toString() + " a infligÃ© " + degat +" points de dÃ©gats";
+					sentence = "Le slime de " + currentSlime.getTypes().toString() + " a infligÃ© " + degat +" points de dÃ©gats";
 					etat = Etat.MENUCHOIX;
 					msg = choixInteraction;
 
 
 				}else if(keyboard == '2') {
-					int degat = m1.getDamageMagicalAttack() * (int)  (Types.compareTypes(m1.getTypes(), m2.getTypes()).getCoeff());
+					int degat = currentSlime.getDamageMagicalAttack() * (int)  (Types.compareTypes(currentSlime.getTypes(), m2.getTypes()).getCoeff());
 
 					if (m2.isDefended()) {
 
 						p.damage(m2, (int) (0.3 * degat));
 						m2.DenfendingOff();
-						sentence = "Le smile adverse se défend\nLe slime de " + m1.getTypes().toString() + " a infligÃ© " + degat +" points de dÃ©gats";
+						sentence = "Le smile adverse se défend\nLe slime de " + currentSlime.getTypes().toString() + " a infligÃ© " + degat +" points de dÃ©gats";
 
 					}else {
 						p.damage(m2, degat);
 
 					}
-					sentence = "Le slime de " + m1.getTypes().toString() + " a infligÃ© " + degat +" points de dÃ©gats";
+					sentence = "Le slime de " + currentSlime.getTypes().toString() + " a infligÃ© " + degat +" points de dÃ©gats";
 
 				}else if(keyboard == '3') {
-					m1.DenfendingOn();
+					currentSlime.DenfendingOn();
 					sentence = "Votre Slime est prÃªt Ã  se dÃ©fendre";
 				}
 
@@ -160,12 +97,12 @@ public class Combat {
 				}
 
 			}else if(this.etat == etat.CHANGESLIME) {
-
+				currentSlime = p.getPlayerSlimes().get( ( int) ((keyboard - '0') -1)  ); 
 			}
 
 			sentence += "\n------------------------------------------------------------------------\n";
 			
-			if(m1.isalive() && m2.isalive() && botTurn){
+			if(currentSlime.isalive() && m2.isalive() && botTurn){
 				
 				Random rdm = new Random();
 				int nb = rdm.nextInt(3);
@@ -174,32 +111,32 @@ public class Combat {
 					
 					int degat = m2.getDamageNormalAttack() ;
 
-					if (m1.isDefended()) {
+					if (currentSlime.isDefended()) {
 
-						m1.setHp(  m1.getHp() - (int) (degat * 0.3)  );
-						sentence += "Vous vous defendez et le slime ennemie de " + m1.getTypes().toString() + " a infligé " + 0.3 * degat +" points de dÃ©gats avec " + m2.getNormalAttackName();
+						currentSlime.setHp(  currentSlime.getHp() - (int) (degat * 0.3)  );
+						sentence += "Vous vous defendez et le slime ennemie de " + currentSlime.getTypes().toString() + " a infligé " + 0.3 * degat +" points de dÃ©gats avec " + m2.getNormalAttackName();
 						m2.DenfendingOff();
 
 					}else {
 						
-						m1.setHp(  m1.getHp() - degat  );
+						currentSlime.setHp(  currentSlime.getHp() - degat  );
 						sentence += "Le slime de " + m2.getTypes().toString() + " a infligé " + degat +" points de dÃ©gats avec " + m2.getNormalAttackName();
 
 					}
 
 				} if(nb == 1){
-					int degat = m2.getDamageMagicalAttack() * (int)  (Types.compareTypes(m2.getTypes(), m1.getTypes()).getCoeff());
+					int degat = m2.getDamageMagicalAttack() * (int)  (Types.compareTypes(m2.getTypes(), currentSlime.getTypes()).getCoeff());
 
 					sentence += "Le monstre vous inflige des degats magiques avec " + m2.getDamageMagicalAttack();
 				
-					if (m1.isDefended()) {
+					if (currentSlime.isDefended()) {
 
-						p.damage(m1, (int) (0.3 * degat));
-						m1.DenfendingOff();
+						p.damage(currentSlime, (int) (0.3 * degat));
+						currentSlime.DenfendingOff();
 						sentence += "Le smile adverse se défend\nLe slime de " + m2.getTypes().toString() + " a infligÃ© " + 0.3 * degat +" points de dÃ©gats";
 
 					}else {
-						p.damage(m1, degat);
+						p.damage(currentSlime, degat);
 
 					}
 					sentence += "Le slime de " + m2.getTypes().toString() + " a infligÃ© " + degat +" points de dÃ©gats";
@@ -212,31 +149,24 @@ public class Combat {
 				}
 			}
 
-			if (!m1.isalive()) {
-				System.out.println("Vous etes morts");
+			if (!currentSlime.isalive()) {
+				
+				System.out.println("Votre slime est morts");
+				
+				p.getPlayerSlimes().remove(currentSlime);
+				
+				if (p.getPlayerSlimes().isEmpty()) {
+					System.out.println("Vous n'avez plus de slime et vous avez perdu");
+				}else {
+					phaseDeCombat(p.getPlayerSlimes().get(0), m2);
+				}
+				
 			}else if (!m2.isalive()){
 
-				m1.setXp(m1.getXp()+1);
-				m1.evolve();
-
-				System.out.println("Vous avez gagnÃ©");
+				currentSlime.setXp(currentSlime.getXp()+1);
+				currentSlime.evolve();
+				System.out.println("Vous avez gagné");
 			}
+
 		}
 	}
-
-
-	public static void main(String[] args) {
-		Slime m1 = new Slime();
-		Slime m2 = new Slime();
-
-		ArrayList<Slime> slimes = new ArrayList<Slime>();
-		slimes.add(m1);
-		slimes.add(m2);
-
-		Player p = new Player();
-
-		Combat combat = new Combat(p);
-		combat.phaseDeCombat(m1, m2);
-
-	}
-}
