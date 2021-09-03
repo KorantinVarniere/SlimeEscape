@@ -1,0 +1,43 @@
+************[a afficher peu a peu dÃ¨s qu'on a appuyer sur play ]*****************
+Bonjour et Bienvenue sur Slime Escape !
+
+Nouveaux messages du roi des Slime:
+
+"Cher Aventurier, 
+une force malefique a pris possession de mon chateau plusieurs de mes serviteurs sont corrompu par cette force et je ne cesse de penser a la fin.
+Venez brave aventurier afin de secourir le chateau et combattre cette force malefique.Pour vous aider dans votre quÃªte je vous donne un de mes derniers serviteurs qui se trouve dans cette lettre:
+(Vous obtenez un slime[on lui give le nom])
+Je vous remets un equipement pour vous faciliter cette tache perilleuse.
+(Vous obtenez 3 potions de soin et 3 potions d'experience).
+Je vous donne les details de votre quete : 
+	- Mon chateau a 5 etages et mes serviteurs les plus forts ont etais corrompu au niveau des escaliers (#) peut-etre qu'ils vous aideront dans votre quete.	
+	- Nous peuple des slimes ont 4 familles elementaires differentes.Â Nous possedons des faiblesses et l'une d'entre elles est notre element:		
+		- Parlons faiblesse la Famille FIRE a une faiblesse avec la Famille WATER
+		- La Famille WATER a une faiblesse avec la Famille WIND
+		- La Famille EARTH a une faiblesse pour la Famille FIRE
+		- Enfin, La Famille WIND a une faiblesse pour la Famille EARTH
+	-Pour ouvrir ton sac pour voir tes objets entre la lettre O.
+	-Pour voir les caracteristiques de ton slime ou bien pour changer de Slime courant tu entreras la lettre P.
+	-Sur ta carte tu verras (o) des ennemies et (le carre) des coffres qui contiennent des objets aleatoires et des (#) qui donnent l'emplacement du prochain Ã©tage.
+	- Tu as la possibilite de ne pas combattre les ennemies mais fait attention car tout monstre vaincu rapporte de l'experience ce qui fera Ã©voluer ton slime par la suite
+	
+Je pense que j'ai faits le tour. Vite ! Jeune aventurier le destin est entre tes mains 
+Bonne chance 
+							Roi Slime" 
+
+***********[Bonne fin]**************************
+
+Merci Aventurier, grace Ã  toi le royaume des slimes est sauve.
+Tu as reussi Ã  repousser les forces du mal.
+Je t'en felicite!
+Bravo!
+
+************[Mauvaise fin]**********************
+Cher Aventurier, il se fait tard et un de mes gardes corrompus a fait part de votre malheureuse mort
+Je sens mon ame quitter mon corps et les tenebres m'impregner.
+Au revoir.
+GAME OVER
+
+
+
+(idÃ©e: pour faire les extends on peut faire un super slime (ce sera le boss de palier) 
